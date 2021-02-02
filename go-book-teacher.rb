@@ -10,22 +10,22 @@ class GoBookTeacher < Formula
 
   if OS.mac?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "1f0a9b65e1fa94df384c8955e12acdadee028c19b60f1abc879ada3cc0266c2b"
+    sha256 "77c4141c60d9a7dbbc58a120196f281db0019f2cbd108a15af2d9ac6afdb02ad"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_x86_64.tar.gz"
-    sha256 "9655858c810e0a156cf9941543de56e4ead3aa37378224e209ae33bd25696bb2"
+    sha256 "360c8de1f8f3ac49782dab5094f1345ec82242d0258f22a28464b741383db7cb"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_arm64.tar.gz"
-    sha256 "fef3cb1874137969789eaeb7cc1ffa0fff7359d2c0eb49e513bff1303b0b4e45"
+    sha256 "5090afbd29b2ef82afd876afedb262e924a21baca3735a1ae7c0cc088287c661"
   end
 
   def install
-    bin.install "book"
+    bin.install "book-teacher"
   end
 
   test do
-    system "#{bin}/bool -v"
+    system "#{bin}/book-teacher -v"
   end
 end
